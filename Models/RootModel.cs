@@ -9,7 +9,5 @@ namespace Stemming.Models
         [Key]
         public int Id {get; set; }
         public string RootName { get; set; }    
-        
-        public List<InputModel> Inputs { get; set; }
     }
 }

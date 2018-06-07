@@ -11,7 +11,7 @@ using System;
 namespace Stemming.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20180606165610_root suffic input and stopwords")]
+    [Migration("20180607023502_root suffic input and stopwords")]
     partial class rootsufficinputandstopwords
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -28,13 +28,13 @@ namespace Stemming.Migrations
 
                     b.Property<string>("InputName");
 
-                    b.Property<int?>("RootModelId");
+                    b.Property<int?>("RootId");
 
                     b.Property<int?>("SuffixModelId");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("RootModelId");
+                    b.HasIndex("RootId");
 
                     b.HasIndex("SuffixModelId");
 
@@ -79,9 +79,9 @@ namespace Stemming.Migrations
 
             modelBuilder.Entity("Stemming.Models.InputModel", b =>
                 {
-                    b.HasOne("Stemming.Models.RootModel")
-                        .WithMany("Inputs")
-                        .HasForeignKey("RootModelId");
+                    b.HasOne("Stemming.Models.RootModel", "Root")
+                        .WithMany()
+                        .HasForeignKey("RootId");
 
                     b.HasOne("Stemming.Models.SuffixModel")
                         .WithMany("Inputs")

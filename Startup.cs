@@ -12,6 +12,8 @@ using Npgsql.PostgresTypes;
 using Npgsql.EntityFrameworkCore.PostgreSQL;
 using Microsoft.EntityFrameworkCore;
 using Stemming.Models;
+using Stemming.Models.Interface;
+using Stemming.Models.Repository;
 
 namespace Stemming
 {
@@ -33,6 +35,9 @@ namespace Stemming
                 options.UseNpgsql(pgsqlConnectionString));
             
             services.AddMvc();
+            services.AddScoped<IDataRepostory<RootModel, long>, RootRepository>();
+            services.AddScoped<IDataRepostory<StopWordModel, long>, StopwordRepository>();
+            services.AddScoped<IDataRepostory<InputModel, long>, InputRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

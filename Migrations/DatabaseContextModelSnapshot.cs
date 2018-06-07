@@ -27,13 +27,13 @@ namespace Stemming.Migrations
 
                     b.Property<string>("InputName");
 
-                    b.Property<int?>("RootModelId");
+                    b.Property<int?>("RootId");
 
                     b.Property<int?>("SuffixModelId");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("RootModelId");
+                    b.HasIndex("RootId");
 
                     b.HasIndex("SuffixModelId");
 
@@ -78,9 +78,9 @@ namespace Stemming.Migrations
 
             modelBuilder.Entity("Stemming.Models.InputModel", b =>
                 {
-                    b.HasOne("Stemming.Models.RootModel")
-                        .WithMany("Inputs")
-                        .HasForeignKey("RootModelId");
+                    b.HasOne("Stemming.Models.RootModel", "Root")
+                        .WithMany()
+                        .HasForeignKey("RootId");
 
                     b.HasOne("Stemming.Models.SuffixModel")
                         .WithMany("Inputs")

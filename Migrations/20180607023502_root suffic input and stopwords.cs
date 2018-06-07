@@ -55,15 +55,15 @@ namespace Stemming.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     InputName = table.Column<string>(nullable: true),
-                    RootModelId = table.Column<int>(nullable: true),
+                    RootId = table.Column<int>(nullable: true),
                     SuffixModelId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_tblInput", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_tblInput_tblRoot_RootModelId",
-                        column: x => x.RootModelId,
+                        name: "FK_tblInput_tblRoot_RootId",
+                        column: x => x.RootId,
                         principalTable: "tblRoot",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
@@ -76,9 +76,9 @@ namespace Stemming.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_tblInput_RootModelId",
+                name: "IX_tblInput_RootId",
                 table: "tblInput",
-                column: "RootModelId");
+                column: "RootId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_tblInput_SuffixModelId",
