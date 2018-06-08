@@ -14,6 +14,7 @@ namespace Stemming.Models
         public DbSet<RootModel> Roots { get; set; }
         public DbSet<SuffixModel> Suffixes { get; set; }
         public DbSet<InputModel> Inputs { get; set; }
+        public DbSet<StopWordModel> Stopwords { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
