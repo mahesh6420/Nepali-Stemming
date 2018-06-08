@@ -22,8 +22,8 @@ namespace Stemming.Models
             modelBuilder.Entity<InputModel>().ToTable("tblInput");
             modelBuilder.Entity<StopWordModel>().ToTable("tblStopword");
 
-           // modelBuilder.Entity<RootModel>().HasMany<InputModel>(r => r.Inputs).WithOne();
-            modelBuilder.Entity<SuffixModel>().HasMany<InputModel>(s => s.Inputs).WithOne();
+           modelBuilder.Entity<InputModel>().HasOne<RootModel>(r => r.Root).WithMany();
+//            modelBuilder.Entity<SuffixModel>().HasMany<InputModel>(s => s.Inputs).WithOne();
                 
             base.OnModelCreating(modelBuilder);
         }

@@ -12,7 +12,7 @@ namespace Stemming.Models.Repository
         {
             _context = context;
         }
-        
+
         public IEnumerable<RootModel> GetAll()
         {
             var roots = _context.Roots.ToList();
@@ -22,22 +22,46 @@ namespace Stemming.Models.Repository
 
         public RootModel Get(long id)
         {
-            throw new System.NotImplementedException();
+            var root = _context.Roots.FirstOrDefault(r => r.Id == id);
+
+            return root;
         }
 
-        public long Add(RootModel b)
+        public long Add(RootModel newRoot)
         {
-            throw new System.NotImplementedException();
+            _context.Roots.Add(newRoot);
+            long rootId = _context.SaveChanges();
+
+            return rootId;
         }
 
-        public long Update(long id, RootModel b)
+        public long Update(long id, RootModel rootItem)
         {
-            throw new System.NotImplementedException();
+            long rootId = 0;
+            var root = _context.Roots.Find(id);
+
+            if (root != null)
+            {
+                root.RootName = rootItem.RootName;
+
+                rootId = _context.SaveChanges();
+            }
+
+            return rootId;
         }
 
         public long Delete(long id)
         {
-            throw new System.NotImplementedException();
+            int rootId = 0;
+            var root = _context.Roots.FirstOrDefault(r => r.Id == id);
+
+            if (root != null)
+            {
+                _context.Roots.Remove(root);
+                rootId = _context.SaveChanges();
+            }
+
+            return rootId;
         }
     }
 }

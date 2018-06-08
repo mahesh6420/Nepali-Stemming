@@ -8,7 +8,5 @@ namespace Stemming.Models
         [Key] 
         public int Id { get; set; }
         public string SuffixName { get; set; }
-
-        public List<InputModel> Inputs { get; set; }
     }
 }
