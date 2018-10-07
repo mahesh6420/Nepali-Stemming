@@ -1,0 +1,23 @@
+﻿<Properties StartupConfiguration="{E86CA2BD-02A2-4482-B04C-795407193139}|Default">
+  <MonoDevelop.Ide.ItemProperties.Stemming PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Models/InputModel.cs">
+    <Files>
+      <File FileName="Models/DatabaseContext.cs" Line="28" Column="17" />
+      <File FileName="Models/Repository/InputRepository.cs" Line="7" Column="52" />
+      <File FileName="appsettings.json" Line="3" Column="60" />
+      <File FileName="Startup.cs" Line="44" Column="100" />
+      <File FileName="Program.cs" Line="1" Column="1" />
+      <File FileName="Controllers/InputsController.cs" Line="1" Column="1" />
+      <File FileName="Controllers/RootsController.cs" Line="15" Column="32" />
+      <File FileName="Controllers/StopwordsController.cs" Line="1" Column="1" />
+      <File FileName="Controllers/SuffixesController.cs" Line="1" Column="1" />
+      <File FileName="Models/InputModel.cs" Line="14" Column="48" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>

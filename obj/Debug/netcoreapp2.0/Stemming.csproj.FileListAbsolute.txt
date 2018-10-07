@@ -3,9 +3,9 @@
 /home/mahesh/myFiles/learnspace/Research/Stemming/backend/asp/Stemming/bin/Debug/netcoreapp2.0/Stemming.runtimeconfig.dev.json
 /home/mahesh/myFiles/learnspace/Research/Stemming/backend/asp/Stemming/bin/Debug/netcoreapp2.0/Stemming.dll
 /home/mahesh/myFiles/learnspace/Research/Stemming/backend/asp/Stemming/bin/Debug/netcoreapp2.0/Stemming.pdb
-/home/mahesh/myFiles/learnspace/Research/Stemming/backend/asp/Stemming/obj/Debug/netcoreapp2.0/Stemming.csprojAssemblyReference.cache
 /home/mahesh/myFiles/learnspace/Research/Stemming/backend/asp/Stemming/obj/Debug/netcoreapp2.0/Stemming.csproj.CoreCompileInputs.cache
 /home/mahesh/myFiles/learnspace/Research/Stemming/backend/asp/Stemming/obj/Debug/netcoreapp2.0/Stemming.AssemblyInfoInputs.cache
 /home/mahesh/myFiles/learnspace/Research/Stemming/backend/asp/Stemming/obj/Debug/netcoreapp2.0/Stemming.AssemblyInfo.cs
 /home/mahesh/myFiles/learnspace/Research/Stemming/backend/asp/Stemming/obj/Debug/netcoreapp2.0/Stemming.dll
 /home/mahesh/myFiles/learnspace/Research/Stemming/backend/asp/Stemming/obj/Debug/netcoreapp2.0/Stemming.pdb
+/home/mahesh/myFiles/learnspace/Research/Stemming/backend/asp/Stemming/obj/Debug/netcoreapp2.0/Stemming.csprojAssemblyReference.cache

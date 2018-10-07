@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Stemming.Controllers.Interface;
 using Stemming.Models;
@@ -6,7 +7,8 @@ using Stemming.Models.Interface;
 
 namespace Stemming.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]")]   
+    [EnableCors("AllowSpecificOrigin")]
     public class StopwordsController : Controller, ICrudInterface<StopWordModel>
     {
         public readonly IDataRepostory<StopWordModel, long> _stopwordRepo;

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Metadata;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -12,6 +13,7 @@ namespace Stemming.Controllers
 {
 //    [Produces("application/json")]
     [Route("api/[controller]")]
+    [EnableCors("AllowSpecificOrigin")]
     public class RootsController : Controller, ICrudInterface<RootModel>
     {
         private readonly IDataRepostory<RootModel, long> _rootRepo;

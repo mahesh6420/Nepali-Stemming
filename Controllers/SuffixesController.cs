@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Stemming.Controllers.Interface;
 using Stemming.Models;
@@ -7,6 +8,7 @@ using Stemming.Models.Interface;
 namespace Stemming.Controllers
 {
     [Route("api/[controller]")]
+    [EnableCors("AllowSpecificOrigin")]
     public class SuffixesController : Controller, ICrudInterface<SuffixModel>
     {
         public readonly IDataRepostory<SuffixModel, long> _suffixRepo;

@@ -6,7 +6,6 @@ namespace Stemming.Models
 {
     public class InputModel
     {
-    
         [Key]
         public int Id {get; set; }
         public string InputName { get; set; }

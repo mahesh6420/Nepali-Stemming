@@ -4,6 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Cors;
+using Microsoft.AspNetCore.Mvc.Cors.Internal;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -32,19 +35,30 @@ namespace Stemming
         public void ConfigureServices(IServiceCollection services)
         {
             var pgsqlConnectionString = Configuration.GetConnectionString("StemmingConnectionString");
-            
+
             services.AddDbContext<DatabaseContext>(options =>
                 options.UseNpgsql(pgsqlConnectionString));
-            
-            services.AddMvc();
+
+            services.AddCors(options =>
+            {
+				options.AddPolicy("AllowSpecificOrigin", builder => builder.WithOrigins("http://localhost:4200"));
+            });
+            //            services.Configure<MvcOptions>(options =>
+            //            {
+            //                options.Filters.Add(new CorsAuthorizationFilterFactory("AllowSpecificOrigin"));
+            //            });
+
             services.AddScoped<IDataRepostory<RootModel, long>, RootRepository>();
             services.AddScoped<IDataRepostory<SuffixModel, long>, SuffixRepository>();
             services.AddScoped<IDataRepostory<InputModel, long>, InputRepository>();
             services.AddScoped<IDataRepostory<StopWordModel, long>, StopwordRepository>();
-            
+
             services.AddScoped<ICrudInterface<RootModel>, RootsController>();
             services.AddScoped<ICrudInterface<SuffixModel>, SuffixesController>();
             services.AddScoped<ICrudInterface<InputModel>, InputsController>();
+
+
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
